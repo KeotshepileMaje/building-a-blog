@@ -3,8 +3,15 @@ import PostHeader from "./PostHeader";
 import classes from './PostContent.module.css'
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import  nightOwl  from "react-syntax-highlighter/dist/cjs/styles/prism/night-owl";
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
+
+SyntaxHighlighter.registerLanguage('js',js)
+SyntaxHighlighter.registerLanguage('css',css)
+
+
 
 export default function PostContent(props) {
     const { post } = props
@@ -47,9 +54,10 @@ export default function PostContent(props) {
 
             return (
                 <SyntaxHighlighter 
-                    style={nightOwl}
-                    language={language}
-                    children={children}
+                    style = {nightOwl}
+                    language = {language}
+                    // eslint-disable-next-line react/no-children-prop
+                    children = {children}
                 />
             )
         }
