@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Fragment } from "react";
 import classes from './Logo.module.css'
 
