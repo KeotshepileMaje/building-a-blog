@@ -28,7 +28,7 @@ export default async function handler(req, res) {
         let client;
 
         console.log('MongoDB URL:', urlConnectionString)
-    
+
         try {
             client = await MongoClient.connect(urlConnectionString)
         } catch (error) {

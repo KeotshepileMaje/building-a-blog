@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "./logo";
+import Logo from "./Logo";
 import classes from './MainNavigation.module.css'
 
 export default function MainNavigator() {
