@@ -33,8 +33,7 @@ export function getAllPosts () {
 
 export function getFeaturedPosts(){
     const allPosts = getAllPosts()
-
-    // console.log(allPosts)
+    
     const featuredPosts = allPosts.filter(post => post.isFeatured)
 
     

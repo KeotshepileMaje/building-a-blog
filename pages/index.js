@@ -7,7 +7,6 @@ import Head from "next/head";
 
 export default function HomePage(props) {
     const { posts } = props
-    console.log(posts)
     return (
         <Fragment>
             <Head>
