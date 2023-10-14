@@ -8,11 +8,15 @@ export default function Notification(props) {
     let statusClasses = '';
 
     if (status === 'success') {
-        statusClasses = classes.success;
+      statusClasses = classes.success;
     }
-
+  
     if (status === 'error') {
-        statusClasses = classes.error;
+      statusClasses = classes.error;
+    }
+  
+    if (status === 'pending') {
+      statusClasses = classes.pending;
     }
 
     const cssClasses = `${classes.notification} ${statusClasses}`;

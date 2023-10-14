@@ -1,19 +1,20 @@
 import classes from './comment-list.module.css';
 
 function CommentList(props) {
-  const {items} = props
+    const {items} = props
 
-  if (!items) {
-    return <div>Loading...</div>
-  }
+    if (!items) {
+        return <div>Loading...</div>
+    }
+    console.log(items)
 
-  return (
-    <ul className={classes.comments}>
-      {items.map(
-        (item)=> <li key={item._id}>{item.text}</li>
-      )}
-    </ul>
-  );
+    return (
+        <ul className={classes.comments}>
+        {items.map(
+            (item)=> <li key={item._id}>{item.text}</li>
+        )}
+        </ul>
+    );
 }
 
 export default CommentList;
