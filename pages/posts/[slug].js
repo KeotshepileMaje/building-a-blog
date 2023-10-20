@@ -1,3 +1,4 @@
+import Comments from "@/components/comment-section/comments";
 import PostContent from "@/components/posts/post-details/PostContent";
 import { getPostData, getPostsFiles } from "@/helper/posts-util";
 import Head from "next/head";
@@ -5,6 +6,8 @@ import { Fragment } from "react";
 
 export default function PostContentPage(props) {
     const { post } = props
+
+    console.log(post)
     
     return (
         <Fragment>
@@ -16,6 +19,7 @@ export default function PostContentPage(props) {
                 />
             </Head>
             <PostContent post = {post} />
+            <Comments  postId={post.slug}/>
         </Fragment>
     )
 }
