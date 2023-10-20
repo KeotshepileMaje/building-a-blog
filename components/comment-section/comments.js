@@ -9,18 +9,13 @@ function Comments(props) {
     const [showComments, setShowComments] = useState(false);
     const [comments, setComments] = useState([])
 
-    console.log(comments)
-    console.log(postId)
-    
-
     useEffect(() => {
-        if (showComments) {
-          fetch('/api/comments/' + postId)
-            .then((response) => response.json())
-            .then((data) => {
-              console.log(data.comments);
-            });
-        }
+      // Fetch comments on the client side
+      fetch('/api/comments/comments')
+        .then((response) => response.json())
+        .then((data) => {
+          setComments(data.comments);
+        });
     }, [postId, showComments]);
 
     function toggleCommentsHandler() {
@@ -53,6 +48,7 @@ function Comments(props) {
         </button>
         {showComments && <NewComment onAddComment={addCommentHandler} />}
         {showComments && <CommentList items={comments} />}
+        
         </section>
     );
 }
