@@ -1,7 +1,5 @@
+import { mongoDb, url } from "@/helper/db-util";
 import { MongoClient } from "mongodb";
-
-const urlConnectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.17rztfq.mongodb.net/?retryWrites=true&w=majority`
-const mongodbDb = process.env.mongodb_database
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -28,14 +26,14 @@ export default async function handler(req, res) {
         let client;
         
         try {
-            client = await MongoClient.connect(urlConnectionString)
+            client = await MongoClient.connect(url)
         } catch (error) {
             console.error('MongoDB Connection Error:', error)
             res.status(500).json({ message: 'Could not connect to database.' });
             return;
         }
 
-        const db = client.db(mongodbDb);
+        const db = client.db(mongoDb);
 
         try {
             const result = await db.collection('messages').insertOne(newMessage);
