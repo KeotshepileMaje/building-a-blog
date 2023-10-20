@@ -6,7 +6,7 @@ module.exports = (phase) => {
       reactStrictMode: true,
       env: {
         mongodb_username: 'keotshepilemaje',
-        mongodb_password: 'gZGT5QdpzsMChhUH',
+        mongodb_password: 'bWWNyDrjYcUurrNI',
         mongodb_clustername: 'cluster0',
         mongodb_database: 'my-blog-dev',
       }
