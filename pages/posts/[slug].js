@@ -7,8 +7,6 @@ import { Fragment } from "react";
 export default function PostContentPage(props) {
     const { post } = props
 
-    console.log(post)
-    
     return (
         <Fragment>
             <Head>

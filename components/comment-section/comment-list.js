@@ -6,8 +6,7 @@ function CommentList(props) {
     if (!items) {
         return <div>Loading...</div>
     }
-    console.log(items)
-
+    
     return (
         <ul className={classes.comments}>
         {items.map(
